@@ -1,0 +1,26 @@
+{% extends 'student_register/base.html' %} 
+
+
+{% block content %}
+
+<!-- {% load widget_tweaks %} -->
+
+<div class="container">
+    <h2 class="text-center">Student Form</h2>
+
+    {% for field in form %}
+    <!-- <div class="form-group text-center my-3"> -->
+        <form action="" method="POST" enctype="multipart/form-data">
+             {% csrf_token %} 
+             {{field.label_tag}}
+             {% render_field field class="form-control" %}
+            <!-- {{form.as_p}} -->
+        <!-- </div> -->
+    {% endfor %}
+
+        <div class="text-center">
+            <input type="submit" value="Submit" class="btn btn-primary my-5 text-center">
+        </div>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'student_register/base.html' %} 
+
+{% block content %}
+
+<h2>Student List</h2>
+
+
+{% for student in students  %}
+    <p>{{student.path}}</p>
+    <li>{{student.full_name}}</li>
+    
+{% endfor %}
+    
+
+{% endblock content %}
