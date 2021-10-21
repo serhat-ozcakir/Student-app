@@ -2,14 +2,32 @@
 
 {% block content %}
 
-<h2>Student List</h2>
+<h2 class="text-center">Student List</h2>
 
 
-{% for student in students  %}
-    <p>{{student.path}}</p>
-    <li>{{student.full_name}}</li>
+<div class="container text-center">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">First</th>
+                <th scope="col">Path</th>
+                <th scope="col">Add NEW</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
     
-{% endfor %}
+            <tr>
+                <td>{{student.full_name}}</td>
+                <td>{{student.path}}</td>
+                <td>
+                   <a href="{% url 'update' student.id %}"><i class="fas fa-edit"></i></a>
+                   <a href="{% url 'delete' student.id %}"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     
-
-{% endblock content %}
+    {% endblock content %}
+    </div>>

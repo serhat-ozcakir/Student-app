@@ -5,4 +5,12 @@ from .models import Student
 class StudentForm(forms.ModelForm):
     class Meta:
         model= Student
-        fields = fields = "__all__"
+        fields =  "__all__"
+        
+    def __str__(self):
+        return self.full_name
+    
+class StudentUpdateForm(forms.ModelForm):
+    class Meta:
+        model= Student
+        fields =  "__all__"
