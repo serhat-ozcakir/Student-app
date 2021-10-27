@@ -15,13 +15,31 @@
     <title>CW Student App</title>
 </head>
 
+<!-- <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #508ce6;">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+        <a class="navbar-brand" href="{% url 'form' %}">Register Form</a>
+        <a class="navbar-brand" href="{% url 'list' %}">Student List</a>
+        <div class="collapse navbar-collapse" id="navbarNav">  
+    </div>
+  </nav> -->
+  <nav  class="navbar navbar-expand-lg navbar-dark" style="background-color: #508ce6;">
+    <div class="container-fluid">
+        <a class="navbar-brand mx-3" href="{% url 'home' %}">Home</a>
+        <form class="d-flex">
+            <a class="navbar-brand" href="{% url 'form' %}">Register Form</a>
+            <a class="navbar-brand" href="{% url 'list' %}">Student List</a>
+      </form>
+    </div>
+  </nav>
+
 <body>
-    <h1><hr>
+    <!-- <h1><hr>
         <center class="text-decoration-non">
            <a href="{% url 'home' %}" class="text-decoration-none">Clarusway</a> 
         </center>
         <hr>
-    </h1>
+    </h1> -->
 
     {% block content %}
     
