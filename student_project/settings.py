@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from decouple import config
 from pathlib import Path
 import os
-
+import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -138,3 +138,5 @@ STATIC_DIRS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals()) 
